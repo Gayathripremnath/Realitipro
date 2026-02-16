@@ -681,3 +681,110 @@ html, body {
     width: 200px;
   }
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+html { font-size: 16px; }
+
+/* large desktops */
+@media (max-width: 1400px) {
+  html { font-size: 15px; }
+  .hero-content h1 { font-size: 64px; }
+  .worth-header h2 { font-size: 70px; }
+  .homeworth-image img { width: 420px; }
+  .property-card img { height: 240px; }
+  .neighborhood-card, .neighborhood-card img { height: 460px; }
+  .property-section { padding: 90px 40px; }
+}
+
+/* regular desktops / small laptops */
+@media (max-width: 1200px) {
+  html { font-size: 15px; }
+  .hero-content h1 { font-size: 56px; }
+  .header-left h2 { font-size: 50px; }
+  .property-grid { grid-template-columns: repeat(3, 1fr); }
+  .homeworth-image img { width: 350px; }
+  .property-card img { height: 220px; }
+  .neighborhood-card, .neighborhood-card img { height: 420px; }
+  .property-section { padding: 80px 36px; }
+}
+
+/* medium / tablet */
+@media (max-width: 992px) {
+  html { font-size: 14px; }
+  .hero-content h1 { font-size: 48px; }
+  .hero-content p { font-size: 18px; }
+  .header-left h2 { font-size: 44px; }
+  .property-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .property-card img { height: 200px; }
+  .neighborhood-card, .neighborhood-card img { height: 380px; }
+  .homeworth-container { flex-direction: column; text-align: center; gap: 28px; }
+  .worth-header { padding: 80px 6%; }
+}
+
+/* small tablets / large phones */
+@media (max-width: 768px) {
+  html { font-size: 13px; }
+  .hero { height: 90vh; }
+  .hero-content h1 { font-size: 36px; }
+  .hero-content p { font-size: 16px; }
+  .search-box { flex-direction: column; gap: 10px; }
+  .search-box input, .search-box button { width: 100%; }
+  .worth-header { flex-direction: column; gap: 20px; text-align: center; }
+  .worth-header h2 { font-size: 40px; }
+  .property-grid { grid-template-columns: 1fr; gap: 20px; }
+  .property-card img { height: 180px; }
+  .neighborhood-card, .neighborhood-card img { height: 320px; }
+  .property-section { padding: 60px 20px; }
+  .neighborhood-section { padding: 60px 20px; }
+  .homeworth-image img { width: 280px; }
+  .modal-box { width: 90%; }
+}
+
+/* phones */
+@media (max-width: 576px) {
+  html { font-size: 12px; }
+  .hero-content h1 { font-size: 28px; }
+  .hero-content p { font-size: 14px; }
+  .worth-header h2 { font-size: 30px; }
+  .homeworth-content h2 { font-size: 28px; }
+  .homeworth-image img { width: 240px; }
+  .property-card img { height: 160px; }
+  .neighborhood-card, .neighborhood-card img { height: 300px; }
+  .see-all-wrapper { padding: 40px 12px; }
+  .details-page { padding: 80px 6%; }
+  .modal-box { padding: 24px; width: 92%; }
+  .submit-btn { font-size: 14px; padding: 10px; }
+}
+
+/* small phones / compact */
+@media (max-width: 420px) {
+  html { font-size: 11px; }
+  .hero-content h1 { font-size: 22px; }
+  .hero-content p { font-size: 13px; }
+  .worth-header h2 { font-size: 28px; }
+  .arrow-btn { width: 50px; height: 50px; }
+  .arrow-btn span { font-size: 18px; }
+  .homeworth-image img { width: 200px; }
+  .property-card img { height: 140px; }
+  .neighborhood-card, .neighborhood-card img { height: 260px; }
+  .see-all-btn { padding: 12px 28px; }
+  .search-box { padding: 8px; }
+  .property-section { padding: 50px 12px; }
+}
+
+/* very small screens */
+@media (max-width: 360px) {
+  html { font-size: 10px; }
+  .hero-content h1 { font-size: 20px; }
+  .hero-content p { font-size: 12px; }
+  .homeworth-image img { width: 180px; }
+  .property-card img { height: 130px; }
+  .neighborhood-card, .neighborhood-card img { height: 240px; }
+  .property-section { padding: 40px 10px; }
+  .neighborhood-section { padding: 40px 10px; }
+}

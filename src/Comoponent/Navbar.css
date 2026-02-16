@@ -219,3 +219,173 @@
   color: #d4a650;
   cursor: pointer;
 }
+
+/* RESPONSIVE SCALING - additional breakpoints */
+
+/* make images scale naturally */
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* large desktops */
+@media (max-width: 1400px) {
+  .logo img { width: 44px; height: 40px; }
+  .logo h1 { font-size: 30px; }
+  .nav-links { gap: 24px; }
+  .nav-links a { font-size: 15px; }
+  .right-section { gap: 18px; }
+  .login-btn { padding: 7px 16px; }
+}
+
+/* regular desktops / small laptops */
+@media (max-width: 1200px) {
+  .logo img { width: 42px; height: 38px; }
+  .logo h1 { font-size: 28px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 14px; }
+  .login-btn { padding: 7px 14px; }
+}
+
+/* existing tablet breakpoint (keep behavior + scale) */
+@media (max-width: 1000px) {
+  .logo img { width: 40px; height: 36px; }
+  .logo h1 { font-size: 26px; }
+  .right-section { gap: 16px; }
+  .menu-btn { display: block; font-size: 22px; }
+  .nav-links { display: none; } /* keep existing behavior */
+}
+
+/* small tablets / large phones */
+@media (max-width: 800px) {
+  .logo img { width: 36px; height: 34px; }
+  .logo h1 { font-size: 22px; }
+  .menu-btn { font-size: 21px; }
+  .mobile-menu { padding: 18px; }
+  .mobile-menu a { font-size: 16px; }
+  .login-btn { padding: 6px 12px; font-size: 14px; }
+}
+
+/* typical phones */
+@media (max-width: 600px) {
+  .logo img { width: 34px; height: 32px; }
+  .logo h1 { font-size: 20px; }
+  .menu-btn { font-size: 20px; }
+  .mobile-menu { padding: 16px; gap: 12px; }
+  .mobile-menu a { font-size: 15px; }
+  .login-modal {
+    width: 90%;
+    padding: 30px;
+    border-radius: 16px;
+  }
+  .login-modal input { padding: 10px; font-size: 14px; }
+  .submit-btn { padding: 10px; font-size: 15px; }
+  .eye-icon { font-size: 16px; right: 10px; }
+}
+
+/* narrow phones / compact */
+@media (max-width: 420px) {
+  .logo img { width: 30px; height: 28px; }
+  .logo h1 { font-size: 18px; }
+  .menu-btn { font-size: 19px; }
+  .mobile-menu { padding: 14px; }
+  .mobile-menu a { font-size: 15px; }
+  .login-modal { width: 95%; padding: 22px; }
+  .login-modal h2 { font-size: 18px; }
+  .subtitle { font-size: 13px; }
+  .login-modal input { font-size: 13px; padding: 9px; }
+  .submit-btn { padding: 9px; font-size: 14px; }
+}
+
+/* very small screens */
+@media (max-width: 360px) {
+  .logo img { width: 26px; height: 24px; }
+  .logo h1 { font-size: 16px; }
+  .mobile-menu a { font-size: 14px; }
+  .login-btn { padding: 6px 10px; font-size: 13px; }
+  .submit-btn { padding: 8px; font-size: 13px; }
+}
+
+/* make images scale naturally */
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* large desktops */
+@media (max-width: 1400px) {
+  .logo img { width: 44px; height: 40px; }
+  .logo h1 { font-size: 30px; }
+  .nav-links { gap: 24px; }
+  .nav-links a { font-size: 15px; }
+  .right-section { gap: 18px; }
+  .login-btn { padding: 7px 16px; }
+}
+
+/* regular desktops / small laptops */
+@media (max-width: 1200px) {
+  .logo img { width: 42px; height: 38px; }
+  .logo h1 { font-size: 28px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 14px; }
+  .login-btn { padding: 7px 14px; }
+}
+
+/* existing tablet breakpoint (keep behavior + scale) */
+@media (max-width: 1000px) {
+  .logo img { width: 40px; height: 36px; }
+  .logo h1 { font-size: 26px; }
+  .right-section { gap: 16px; }
+  .menu-btn { display: block; font-size: 22px; }
+  .nav-links { display: none; } /* keep existing behavior */
+}
+
+/* small tablets / large phones */
+@media (max-width: 800px) {
+  .logo img { width: 36px; height: 34px; }
+  .logo h1 { font-size: 22px; }
+  .menu-btn { font-size: 21px; }
+  .mobile-menu { padding: 18px; }
+  .mobile-menu a { font-size: 16px; }
+  .login-btn { padding: 6px 12px; font-size: 14px; }
+}
+
+/* typical phones */
+@media (max-width: 600px) {
+  .logo img { width: 34px; height: 32px; }
+  .logo h1 { font-size: 20px; }
+  .menu-btn { font-size: 20px; }
+  .mobile-menu { padding: 16px; gap: 12px; }
+  .mobile-menu a { font-size: 15px; }
+  .login-modal {
+    width: 90%;
+    padding: 30px;
+    border-radius: 16px;
+  }
+  .login-modal input { padding: 10px; font-size: 14px; }
+  .submit-btn { padding: 10px; font-size: 15px; }
+  .eye-icon { font-size: 16px; right: 10px; }
+}
+
+/* narrow phones / compact */
+@media (max-width: 420px) {
+  .logo img { width: 30px; height: 28px; }
+  .logo h1 { font-size: 18px; }
+  .menu-btn { font-size: 19px; }
+  .mobile-menu { padding: 14px; }
+  .mobile-menu a { font-size: 15px; }
+  .login-modal { width: 95%; padding: 22px; }
+  .login-modal h2 { font-size: 18px; }
+  .subtitle { font-size: 13px; }
+  .login-modal input { font-size: 13px; padding: 9px; }
+  .submit-btn { padding: 9px; font-size: 14px; }
+}
+
+/* very small screens */
+@media (max-width: 360px) {
+  .logo img { width: 26px; height: 24px; }
+  .logo h1 { font-size: 16px; }
+  .mobile-menu a { font-size: 14px; }
+  .login-btn { padding: 6px 10px; font-size: 13px; }
+  .submit-btn { padding: 8px; font-size: 13px; }
+}

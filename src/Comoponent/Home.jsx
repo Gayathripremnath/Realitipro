@@ -142,7 +142,7 @@ useEffect(() => {
     </div>
   </div>
 
-  <div className="property-grid" data-aos='zoom-out'>
+  <div className="property-grid" data-aos='fade-right'>
     {properties.map((property) => (
       <div
         key={property.id}

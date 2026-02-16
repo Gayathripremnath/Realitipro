@@ -1,0 +1,206 @@
+/* ===== NAVBAR ===== */
+
+.navbar {
+  /* background: transparent; */
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  background: black;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.logo img {
+  width: 49px;
+  height: 45px;
+  border-radius: 8px;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 33px;
+}
+
+/* DESKTOP LINKS */
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #d4a650;
+}
+
+/* RIGHT SIDE */
+
+.right-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.login-btn {
+  padding: 8px 18px;
+  background: #d4a650;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.menu-btn {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu {
+  position: fixed;
+  top: 80px;
+  width: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 15px;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* ===== LOGIN MODAL ===== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.login-modal {
+  background: #1e1e1e;
+  color: white;
+  width: 420px;
+  padding: 40px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  cursor: pointer;
+}
+
+.login-modal h2 {
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 25px;
+}
+
+.login-modal input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 30px;
+  border: 1px solid #444;
+  background: #111;
+  color: white;
+}
+
+.password-field {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 15px;
+  top: 14px;
+  cursor: pointer;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.forgot {
+  color: #d4a650;
+  cursor: pointer;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  background: #d4a650;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-text span {
+  color: #d4a650;
+  cursor: pointer;
+}

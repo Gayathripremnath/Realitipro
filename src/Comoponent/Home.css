@@ -678,6 +678,18 @@ html, body {
   color: black;
 }
 
+
+
+.up-arrow {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+
+
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .newsletter-section {
@@ -965,4 +977,107 @@ html { font-size: 16px; }
   .neighborhood-card, .neighborhood-card img { height: 240px; }
   .property-section { padding: 40px 10px; }
   .neighborhood-section { padding: 40px 10px; }
+}
+/* =========================
+   MEDIA QUERIES
+========================= */
+
+/* Large screens (desktops) */
+@media (max-width: 1200px) {
+  .section-heading {
+    font-size: 3.5rem;
+  }
+  .news-card {
+    width: 450px;
+  }
+  .newsletter-heading {
+    font-size: 2.8rem;
+  }
+  .newsletter-text {
+    font-size: 1.1rem;
+  }
+  .newsletter-input {
+    width: 400px;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+  .section-heading {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .news-cards-container {
+    flex-wrap: wrap;
+    gap: 20px;
+    height: auto;
+    justify-content: center;
+  }
+  .news-card {
+    width: 350px;
+    margin-bottom: 20px;
+  }
+  .newsletter-section {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 40px 20px;
+  }
+  .newsletter-heading {
+    font-size: 2.5rem;
+  }
+  .newsletter-text {
+    font-size: 1rem;
+  }
+  .newsletter-input {
+    width: 100%;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Small screens (large phones) */
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 2.5rem;
+  }
+  .news-card {
+    width: 90%;
+  }
+  .newsletter-heading {
+    font-size: 2rem;
+  }
+  .newsletter-text {
+    font-size: 0.95rem;
+  }
+  .newsletter-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 18px;
+  }
+}
+
+/* Extra small screens (phones) */
+@media (max-width: 480px) {
+  .section-heading {
+    font-size: 2rem;
+  }
+  .news-card {
+    width: 100%;
+  }
+  .newsletter-heading {
+    font-size: 1.8rem;
+  }
+  .newsletter-text {
+    font-size: 0.9rem;
+  }
+  .newsletter-btn {
+    font-size: 16px;
+  }
+  .up-arrow {
+    font-size: 1.5rem;
+    margin-top: 30px;
+  }
 }

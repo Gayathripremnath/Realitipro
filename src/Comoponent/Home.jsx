@@ -13,6 +13,7 @@ const navigate = useNavigate();
   const scrollToAgent = () => {
     agentRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
  const properties = [
   {
     id: 1,
@@ -94,7 +95,12 @@ const newsItems = [
       alert("Please enter a valid email");
     }
   };
-
+const scrollToHome = () => {
+  window.scrollTo({
+    top: 0,      
+    behavior: "smooth"
+  });
+};
   return (
     <>
       {/* HERO SECTION */}
@@ -297,9 +303,9 @@ const newsItems = [
 
   
 </section>
- <section className="home-news-section">
-      <h2 className="section-heading">Browse our News and Article</h2>
-      <div className="news-cards-container">
+ <section className="home-news-section" data-aos='fade-out'>
+      <h2 className="section-heading" data-aos="fade-down">Browse our News and Article</h2>
+      <div className="news-cards-container" data-aos='fade-up'>
         {newsItems.map((item, index) => (
           <div key={index} className="news-card">
             <img src={item.image} alt={item.title} className="news-image" />
@@ -324,10 +330,10 @@ const newsItems = [
   </div>
     </section>
     
-    <section className="newsletter-section">
+    <section className="newsletter-section" data-aos='zoom-up'>
       <div className="newsletter-overlay">
         <div className="newsletter-content">
-          <h2 className="newsletter-heading">Subscribe to our newsletter</h2>
+          <h2 className="newsletter-heading" data-aos="fade-up">Subscribe to our newsletter</h2>
           <p className="newsletter-text">
             Top priority, and she is committed to walking with them consistently walking.
           </p>
@@ -350,6 +356,14 @@ const newsItems = [
         </div>
       </div>
     </section>
+       <section className="up-arrow" data-aos='zoom-in'>
+     
+
+        <div className="arrow-btn" onClick={scrollToHome}>
+          ↑
+
+        </div>
+      </section>
 
 
     </>

@@ -271,3 +271,164 @@ html, body {
     opacity: 1;
   }
 }
+@media (min-width: 1400px) {
+  .hero-content h1 {
+    font-size: 72px;
+  }
+
+  .worth-header h2 {
+    font-size: 80px;
+  }
+
+  .homeworth-image img {
+    width: 480px;
+  }
+}
+@media (max-width: 1200px) {
+  .hero-content h1 {
+    font-size: 56px;
+  }
+
+  .worth-header h2 {
+    font-size: 60px;
+  }
+
+  .homeworth-image img {
+    width: 350px;
+  }
+
+  .homeworth-container {
+    gap: 40px;
+  }
+}
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  .worth-header h2 {
+    font-size: 50px;
+  }
+
+  .homeworth-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .homeworth-image img {
+    width: 320px;
+  }
+
+  .homeworth-content p {
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 90vh;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .search-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-box input,
+  .search-box button {
+    width: 100%;
+  }
+
+  .worth-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .worth-header h2 {
+    font-size: 40px;
+  }
+
+  .arrow-btn {
+    width: 60px;
+    height: 60px;
+  }
+
+  .homeworth-image img {
+    width: 280px;
+  }
+
+  .modal-box {
+    width: 90%;
+  }
+}
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .worth-header h2 {
+    font-size: 30px;
+  }
+
+  .homeworth-content h2 {
+    font-size: 28px;
+  }
+
+  .homeworth-content h4 {
+    font-size: 16px;
+  }
+
+  .homeworth-image img {
+    width: 240px;
+  }
+
+  .modal-box {
+    padding: 25px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+  }
+}
+@media (max-width: 400px) {
+  .hero-content h1 {
+    font-size: 22px;
+  }
+
+  .hero-content p {
+    font-size: 13px;
+  }
+
+  .worth-header h2 {
+    font-size: 24px;
+  }
+
+  .arrow-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .arrow-btn span {
+    font-size: 18px;
+  }
+
+  .homeworth-image img {
+    width: 200px;
+  }
+}

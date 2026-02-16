@@ -84,6 +84,7 @@
 /* MOBILE MENU */
 
 .mobile-menu {
+padding: 10px;
   position: fixed;
   top: 80px;
   width: 100%;
@@ -96,6 +97,7 @@
 }
 
 .mobile-menu a {
+    padding: 10px;
   text-decoration: none;
   color: white;
   font-size: 18px;

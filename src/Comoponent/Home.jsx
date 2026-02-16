@@ -87,7 +87,7 @@ useEffect(() => {
       </section>
 
       {/* YOUR HOME WORTH SECTION TITLE */}
-      <section className="worth-header" data-aos='fade-left'>
+      <section className="worth-header" data-aos='zoom-in'>
         <h2>Your Home Worth</h2>
 
         <div className="arrow-btn" onClick={scrollToAgent}>
@@ -142,7 +142,7 @@ useEffect(() => {
     </div>
   </div>
 
-  <div className="property-grid">
+  <div className="property-grid" data-aos='zoom-out'>
     {properties.map((property) => (
       <div
         key={property.id}
@@ -221,7 +221,7 @@ useEffect(() => {
   </h2>
 
   <div className="neighborhood-grid">
-    <div className="neighborhood-card">
+    <div className="neighborhood-card"  data-aos='fade-left'>
       <img
         src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6"
         alt="New York"
@@ -232,7 +232,7 @@ useEffect(() => {
       </div>
     </div>
 
-    <div className="neighborhood-card">
+    <div className="neighborhood-card" data-aos='fade-right'>
       <img
         src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae"
         alt="Los Angeles"
@@ -243,7 +243,7 @@ useEffect(() => {
       </div>
     </div>
 
-    <div className="neighborhood-card">
+    <div className="neighborhood-card" data-aos='fade-left'>
       <img
         src="https://images.unsplash.com/photo-1494526585095-c41746248156"
         alt="Chicago"

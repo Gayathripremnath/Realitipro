@@ -62,6 +62,38 @@ useEffect(() => {
   });
 }, []);
 
+const newsItems = [
+  {
+    image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+    date: "January 01, 1970",
+    title: "Renting & Leasing Property in Today’s Market: What You Need to Know",
+    link: "/news-details-1",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1633694705199-bc1e0a87c97a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fHByb3BlcnR5fGVufDB8fDB8fHww",
+    date: "January 01, 1970",
+    title: "Your Guide to Buying Property in Today’s U.S. Real Estate Market",
+    link: "/news-details-2",
+  },
+  {
+    image: "https://plus.unsplash.com/premium_photo-1736194029386-f78f8baeed39?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzAzfHxwcm9wZXJ0eXxlbnwwfHwwfHx8MA%3D%3D",
+    date: "January 01, 1970",
+    title: "The Property Boom in the USA: What It Means for Buyers & Sellers in Today’s Market",
+    link: "/news-details-3",
+  },
+];
+
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (email) {
+      alert(`Subscribed successfully with ${email}`);
+      setEmail("");
+    } else {
+      alert("Please enter a valid email");
+    }
+  };
 
   return (
     <>
@@ -254,7 +286,71 @@ useEffect(() => {
       </div>
     </div>
   </div>
+  <div className="see-all-wrapper" data-aos='zoom-in'>
+    <button
+      className="see-all-btn"
+      onClick={() => navigate("/neighborhoods")}
+    >
+      See All Neighborhoods →
+    </button>
+  </div>
+
+  
 </section>
+ <section className="home-news-section">
+      <h2 className="section-heading">Browse our News and Article</h2>
+      <div className="news-cards-container">
+        {newsItems.map((item, index) => (
+          <div key={index} className="news-card">
+            <img src={item.image} alt={item.title} className="news-image" />
+            <p className="news-date">{item.date}</p>
+            <h3 className="news-title">{item.title}</h3>
+            <button
+              className="read-more-btn"
+              onClick={() => navigate(item.link)}
+            >
+              Read More
+            </button>
+          </div>
+        ))}
+      </div>
+        <div className="see-all-wrapper" data-aos='zoom-in'>
+    <button
+      className="see-all-btn"
+      onClick={() => navigate("/news")}
+    >
+      See All News & Articles →
+    </button>
+  </div>
+    </section>
+    
+    <section className="newsletter-section">
+      <div className="newsletter-overlay">
+        <div className="newsletter-content">
+          <h2 className="newsletter-heading">Subscribe to our newsletter</h2>
+          <p className="newsletter-text">
+            Top priority, and she is committed to walking with them consistently walking.
+          </p>
+          <form className="newsletter-form" onSubmit={handleSubscribe}>
+            <input
+              type="email"
+              placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="newsletter-input"
+              required
+            />
+            <button type="submit" className="newsletter-btn">
+              Subscribe
+                <div className="arrow-bt" onClick={scrollToAgent}>
+          →
+        </div>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
 
     </>
   );

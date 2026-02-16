@@ -65,7 +65,7 @@ const Navbar = () => {
       )}
 
       {showLogin && (
-  <div className="modal-overlay">
+  <div className="modal-overlay" data-aos='zoom-in'>
     <div className="login-modal">
       
       <span 

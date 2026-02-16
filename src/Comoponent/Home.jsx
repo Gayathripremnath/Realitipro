@@ -1,4 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef ,useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import heroImage from "../assets/hero.jpg";
@@ -53,6 +55,12 @@ const navigate = useNavigate();
       "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
   },
 ];
+useEffect(() => {
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+}, []);
 
 
   return (
@@ -61,7 +69,7 @@ const navigate = useNavigate();
       <section
         className="hero"
         style={{ backgroundImage: `url(${heroImage})` }}
-      >
+        data-aos="fade">
         <div className="overlay"></div>
 
         <div className="hero-content">
@@ -79,7 +87,7 @@ const navigate = useNavigate();
       </section>
 
       {/* YOUR HOME WORTH SECTION TITLE */}
-      <section className="worth-header">
+      <section className="worth-header" data-aos='fade-left'>
         <h2>Your Home Worth</h2>
 
         <div className="arrow-btn" onClick={scrollToAgent}>
@@ -88,7 +96,7 @@ const navigate = useNavigate();
       </section>
 
       {/* AGENT SECTION */}
-      <section className="homeworth-section" ref={agentRef}>
+      <section className="homeworth-section" ref={agentRef} data-aos='fade-right'>
         <div className="homeworth-container">
           <div className="homeworth-image">
             <img
@@ -116,7 +124,7 @@ const navigate = useNavigate();
       </section>
       
  {/* PROPERTY SECTION ✅ OUTSIDE MODAL */}
-    <section className="property-section">
+    <section className="property-section" data-aos='fade-left'>
 
   <div className="property-header">
     <div className="header-left">
@@ -161,7 +169,7 @@ const navigate = useNavigate();
       </div>
     ))}
   </div>
-<div className="see-all-wrapper">
+<div className="see-all-wrapper" data-aos='zoom-in'>
     <button
       className="see-all-btn"
       onClick={() => navigate("/properties")}
@@ -173,7 +181,7 @@ const navigate = useNavigate();
 
       {/* MODAL */}
       {open && (
-        <div className="modal-overlay">
+        <div className="modal-overlay" data-aos='fade-left'>
           <div className="modal-box">
             <span
               className="close-btn"
@@ -206,6 +214,48 @@ const navigate = useNavigate();
         </div>  
         
       )}
+      {/* NEIGHBORHOODS SECTION */}
+<section className="neighborhood-section" data-aos='fade-left'>
+  <h2 className="neighborhood-title">
+    Find Your <span>Neighborhoods</span>
+  </h2>
+
+  <div className="neighborhood-grid">
+    <div className="neighborhood-card">
+      <img
+        src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6"
+        alt="New York"
+      />
+      <div className="neighborhood-overlay">
+        <h3>New York</h3>
+        <p>120 Properties</p>
+      </div>
+    </div>
+
+    <div className="neighborhood-card">
+      <img
+        src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae"
+        alt="Los Angeles"
+      />
+      <div className="neighborhood-overlay">
+        <h3>Los Angeles</h3>
+        <p>86 Properties</p>
+      </div>
+    </div>
+
+    <div className="neighborhood-card">
+      <img
+        src="https://images.unsplash.com/photo-1494526585095-c41746248156"
+        alt="Chicago"
+      />
+      <div className="neighborhood-overlay">
+        <h3>Chicago</h3>
+        <p>64 Properties</p>
+      </div>
+    </div>
+  </div>
+</section>
+
     </>
   );
 };

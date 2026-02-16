@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../assets/logo.jpg";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 
 const Navbar = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -62,47 +64,62 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* LOGIN MODAL */}
       {showLogin && (
-        <div className="modal-overlay">
-          <div className="login-modal">
-            <span className="close-btn" onClick={() => setShowLogin(false)}>✕</span>
+  <div className="modal-overlay">
+    <div className="login-modal">
+      
+      <span 
+        className="close-btn" 
+        onClick={() => setShowLogin(false)}
+      >
+        ✕
+      </span>
 
-            <h2>Welcome Back</h2>
-            <p className="subtitle">Sign in to your RealityPro account</p>
+      <h2>Welcome Back</h2>
+      <p className="subtitle">
+        Sign in to your RealityPro account
+      </p>
 
-            <label>Email Address</label>
-            <input type="email" placeholder="Enter your email" />
+      <label>Email Address</label>
+      <input 
+        type="email" 
+        placeholder="Enter your email" 
+      />
 
-            <label>Password</label>
-            <div className="password-field">
-              <input 
-                type={showPassword ? "text" : "password"} 
-                placeholder="Enter your password" 
-              />
-              <span 
-                className="eye-icon"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                👁
-              </span>
-            </div>
+      <label>Password</label>
+      <div className="password-field">
+        <input
+          type={showPassword ? "text" : "password"}
+          placeholder="Enter your password"
+        />
 
-            <div className="login-options">
-              <label>
-                <input type="checkbox" /> Remember me
-              </label>
-              <span className="forgot">Forgot password?</span>
-            </div>
+        <span
+          className="eye-icon"
+          onClick={() => setShowPassword(!showPassword)}
+        >
+          {showPassword ? "👁" : "🙈"}
+        </span>
+      </div>
 
-            <button className="submit-btn">Sign In</button>
+      <div className="login-options">
+        <label>
+          <input type="checkbox" /> Remember me
+        </label>
+        <span className="forgot">Forgot password?</span>
+      </div>
 
-            <p className="signup-text">
-              Don't have an account? <span>Sign Up</span>
-            </p>
-          </div>
-        </div>
-      )}
+      <button className="submit-btn">
+        Sign In
+      </button>
+
+      <p className="signup-text">
+        Don't have an account? <span>Sign Up</span>
+      </p>
+
+    </div>
+  </div>
+)}
+
     </>
   );
 };

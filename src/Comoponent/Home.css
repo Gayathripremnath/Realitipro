@@ -40,13 +40,13 @@ html, body {
   position: relative;
   text-align: center;
   color: white;
-  max-width: 900px;
-  padding: 20px;
+  max-width: 1000px;
+  padding: 30px;
 }
 
 .hero-content h1 {
   font-size: 64px;
-  font-weight: 300;
+  font-weight: 900;
   margin-bottom: 20px;
 }
 
@@ -83,6 +83,134 @@ html, body {
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
+}
+
+
+.property-section {
+  background: #0f0f0f;
+  padding: 100px 60px;
+  color: white;
+}
+
+/* HEADER LAYOUT */
+.property-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.header-left h2 {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.header-right {
+  width: 40%;
+}
+
+.header-right p {
+  color: #ccc;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* GRID */
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+
+.property-card {
+  background: #121212;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.4s ease;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.property-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(212, 162, 76, 0.15);
+}
+
+.property-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* CARD CONTENT */
+.property-info {
+  padding: 22px;
+}
+
+/* PRICE */
+.price {
+  color: #d4a24c;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* BED BATH SQFT ROW */
+.property-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.property-details span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ADDRESS */
+.address {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* LISTED WITH */
+.listed {
+  font-size: 13px;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge {
+  background: #2e3d27;
+  color: #9be870;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+
+.details-page {
+  padding: 120px 10%;
+  color: white;
+  background: #000;
+  text-align: center;
+}
+
+.details-page img {
+  width: 600px;
+  max-width: 100%;
+  border-radius: 20px;
+  margin-bottom: 30px;
 }
 
 /* RESPONSIVE */
@@ -207,7 +335,10 @@ html, body {
   align-items: center;
   animation: fadeIn 0.3s ease;
 }
-
+.modal-overlay h3{
+    color: white;
+    padding: 10px;
+}
 .modal-box {
   background: #111;
   padding: 40px;
@@ -218,6 +349,7 @@ html, body {
 }
 
 .close-btn {
+    color: white;
   position: absolute;
   right: 20px;
   top: 20px;

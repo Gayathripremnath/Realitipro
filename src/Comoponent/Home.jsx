@@ -161,7 +161,14 @@ const navigate = useNavigate();
       </div>
     ))}
   </div>
-
+<div className="see-all-wrapper">
+    <button
+      className="see-all-btn"
+      onClick={() => navigate("/properties")}
+    >
+      See All Properties →
+    </button>
+  </div>
 </section>
 
       {/* MODAL */}

@@ -197,7 +197,27 @@ html, body {
   border-radius: 50px;
   font-weight: 600;
 }
-
+.see-all-btn {
+  padding: 16px 40px;
+  background: transparent;
+  border: 1px solid #d4a24c;
+  color: #d4a24c;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.see-all-wrapper {
+    padding: 80px;
+  display: flex;
+  justify-content: center;
+}
+.see-all-btn:hover {
+  background: #d4a24c;
+  color: black;
+  transform: translateY(-4px);
+}
 
 .details-page {
   padding: 120px 10%;

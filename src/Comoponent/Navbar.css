@@ -1,12 +1,12 @@
 /* ===== NAVBAR ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 
 .navbar {
-  /* background: transparent; */
 
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 10px 10px;
+  padding: 20px 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -39,6 +39,11 @@
 /* DESKTOP LINKS */
 
 .nav-links {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+     text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 2px;
   display: flex;
   gap: 30px;
   list-style: none;
@@ -47,7 +52,7 @@
 .nav-links a {
   text-decoration: none;
   color: white;
-  font-weight: 500;
+
   transition: 0.3s;
 }
 

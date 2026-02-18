@@ -106,8 +106,18 @@ const scrollToHome = () => {
       {/* HERO SECTION */}
       <section
         className="hero"
-        style={{ backgroundImage: `url(${heroImage})` }}
         data-aos="fade">
+        <video 
+          className="hero-video" 
+          autoPlay={true} 
+          muted={true} 
+          loop={true}
+          playsInline={true}
+          preload="metadata"
+        >
+          <source src="/home.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="overlay"></div>
 
         <div className="hero-content">

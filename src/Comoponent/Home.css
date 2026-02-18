@@ -12,7 +12,7 @@ body {
 }
 html, body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: black;
+    background-color: black !important;
   width: 100%;
   overflow-x: hidden;
 }
@@ -61,7 +61,7 @@ html, body {
 
 .hero-content h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
+  font-size: 20px;
   font-weight: 300;
   letter-spacing: 10px;
   text-transform: uppercase;
@@ -108,7 +108,7 @@ html, body {
 
 
 .property-section {
-  background: #0f0f0f;
+  background: rgb(12, 12, 12);
   padding: 100px 60px;
   color: white;
 }
@@ -122,8 +122,11 @@ html, body {
 }
 
 .header-left h2 {
-  font-size: 60px;
-  font-weight: 500;
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-weight: 300;
   line-height: 1.1;
 }
 
@@ -372,8 +375,10 @@ html, body {
 
 
 .worth-header {
-    display: flex;
-  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
   padding: 100px 8%;
 }
 
@@ -384,18 +389,23 @@ html, body {
 }
 
 .worth-header h2 {
-  font-size: 70px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin-left: 0;
+  font-size: 65px  !important;
   color: white;
-  font-weight: 500;
   letter-spacing: 1px;
 }
 
 /* ROUND ARROW */
 .arrow-btn {
-  width: 70px;
-  height: 70px;
+  width: 63px;
+  color: white;
+  height: 65px;
   border-radius: 50%;
-  background: white;
+  border: 2px solid #d4a24c;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -405,7 +415,7 @@ html, body {
 
 .arrow-btn span {
   font-size: 26px;
-  color: black;
+  color: rgb(255, 255, 255);
   transition: all 0.4s ease;
 }
 
@@ -438,14 +448,23 @@ html, body {
 
 .homeworth-content h2 {
   font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing: 7px;
 }
 
 .homeworth-content h4 {
+    font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing: 4px;
   margin: 10px 0;
   color: #d4a24c;
 }
 
 .homeworth-content p {
+    font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing:2px;
   max-width: 500px;
   margin: 20px 0;
 }
@@ -737,7 +756,7 @@ html, body {
   }
 
   .worth-header h2 {
-    font-size: 80px;
+    font-size: 30px;
   }
 
   .homeworth-image img {
@@ -750,7 +769,7 @@ html, body {
   }
 
   .worth-header h2 {
-    font-size: 60px;
+    font-size: 30px;
   }
 
   .homeworth-image img {
@@ -771,7 +790,7 @@ html, body {
   }
 
   .worth-header h2 {
-    font-size: 50px;
+    font-size: 30px;
   }
 
   .homeworth-container {
@@ -905,7 +924,7 @@ html { font-size: 16px; }
 @media (max-width: 1400px) {
   html { font-size: 15px; }
   .hero-content h1 { font-size: 64px; }
-  .worth-header h2 { font-size: 70px; }
+  .worth-header h2 { font-size: 30px; }
   .homeworth-image img { width: 420px; }
   .property-card img { height: 240px; }
   .neighborhood-card, .neighborhood-card img { height: 460px; }
@@ -946,7 +965,7 @@ html { font-size: 16px; }
   .search-box { flex-direction: column; gap: 10px; }
   .search-box input, .search-box button { width: 100%; }
   .worth-header { flex-direction: column; gap: 20px; text-align: center; }
-  .worth-header h2 { font-size: 40px; }
+  .worth-header h2 { font-size: 30px; }
   .property-grid { grid-template-columns: 1fr; gap: 20px; }
   .property-card img { height: 180px; }
   .neighborhood-card, .neighborhood-card img { height: 320px; }
@@ -988,7 +1007,6 @@ html { font-size: 16px; }
   .property-section { padding: 50px 12px; }
 }
 
-/* very small screens */
 @media (max-width: 360px) {
   html { font-size: 10px; }
   .hero-content h1 { font-size: 20px; }
@@ -999,11 +1017,7 @@ html { font-size: 16px; }
   .property-section { padding: 40px 10px; }
   .neighborhood-section { padding: 40px 10px; }
 }
-/* =========================
-   MEDIA QUERIES
-========================= */
 
-/* Large screens (desktops) */
 @media (max-width: 1200px) {
   .section-heading {
     font-size: 3.5rem;
@@ -1100,5 +1114,263 @@ html { font-size: 16px; }
   .up-arrow {
     font-size: 1.5rem;
     margin-top: 30px;
+  }
+}
+
+/* ===============================
+   UNIFIED RESPONSIVE OVERRIDES
+================================ */
+@media (max-width: 1440px) {
+  .property-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .property-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .neighborhood-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .news-cards-container {
+    flex-wrap: wrap;
+    height: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 44px;
+    letter-spacing: 6px;
+  }
+
+  .property-section {
+    padding: 80px 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .property-header {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .header-right {
+    width: 100%;
+  }
+
+  .property-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .homeworth-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    margin-top: 70px;
+    padding: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+    letter-spacing: 4px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+
+  .search-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-box input,
+  .search-box button {
+    width: 100%;
+  }
+
+  .property-grid,
+  .neighborhood-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .worth-header h2,
+  .header-left h2,
+  .section-heading,
+  .newsletter-heading {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .property-section,
+  .neighborhood-section,
+  .home-news-section {
+    padding: 40px 14px;
+  }
+
+  .see-all-wrapper {
+    padding: 30px 10px;
+  }
+
+  .news-card {
+    width: 100%;
+  }
+
+  .modal-box {
+    width: 94%;
+    padding: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 28px;
+    letter-spacing: 3px;
+  }
+
+  .hero-content p {
+    font-size: 13px;
+  }
+
+  .worth-header h2 {
+    font-size: 26px !important;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-content {
+    margin-top: 56px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .property-card img {
+    height: 145px;
+  }
+}
+
+@media (max-width: 375px) {
+  html {
+    font-size: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 21px;
+    letter-spacing: 2px;
+  }
+
+  .hero-content p {
+    font-size: 12px;
+    margin-bottom: 24px;
+  }
+
+  .worth-header h2 {
+    font-size: 20px !important;
+  }
+
+  .property-section,
+  .neighborhood-section,
+  .home-news-section {
+    padding: 34px 10px;
+  }
+
+  .property-card img {
+    height: 130px;
+  }
+
+  .neighborhood-card,
+  .neighborhood-card img {
+    height: 230px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-content h1 {
+    font-size: 20px;
+  }
+
+  .worth-header h2 {
+    font-size: 18px !important;
+    max-width: 200px;
+    margin-left: 0;
+  }
+
+  .homeworth-image img {
+    width: 170px;
+  }
+}
+
+/* FINAL FIX: Your Home Worth block */
+@media (max-width: 992px) {
+  .worth-header {
+    padding: 70px 6%;
+  }
+
+  .worth-header h2 {
+    font-size: 42px !important;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .worth-header {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    padding: 50px 14px;
+  }
+
+  .worth-header h2 {
+    font-size: 30px !important;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+
+  .arrow-btn {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 375px) {
+  .worth-header {
+    padding: 36px 10px;
+    gap: 12px;
+  }
+
+  .worth-header h2 {
+    font-size: 22px !important;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .arrow-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .arrow-btn span {
+    font-size: 18px;
   }
 }

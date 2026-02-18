@@ -116,7 +116,7 @@ const scrollToHome = () => {
           preload="metadata"
         >
           <source src="/home.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+         
         </video>
         <div className="overlay"></div>
 
@@ -170,8 +170,8 @@ const scrollToHome = () => {
           </div>
         </div>
       </section>
-      
- {/* PROPERTY SECTION ✅ OUTSIDE MODAL */}
+ 
+
     <section className="property-section" data-aos='fade-left'>
 
   <div className="property-header">

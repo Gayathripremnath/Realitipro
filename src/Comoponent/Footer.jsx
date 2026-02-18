@@ -6,7 +6,6 @@ import "./Footer.css";
 import logo from "../assets/logo.jpg";
 
 const Footer = () => {
-    
   return (
     <footer className="footer">
       <div className="footer-top">
@@ -48,17 +47,18 @@ const Footer = () => {
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
             </ul>
-         
           </div>
         </div>
       </div>
 
       {/* Bottom row */}
       <div className="footer-bottom">
-        <p>© 2026 Bino Johnson, All Rights Reserved</p>
+        <p>&copy; 2026 Bino Johnson, All Rights Reserved</p>
         <div className="footer-legal">
-          <Link to="/admin">Admin Login</Link> | 
-          <Link to="/privacy">Privacy Policy</Link> | 
+          <Link to="/admin">Admin Login</Link>
+          <span className="legal-sep">|</span>
+          <Link to="/privacy">Privacy Policy</Link>
+          <span className="legal-sep">|</span>
           <Link to="/terms">Terms & Conditions</Link>
         </div>
       </div>

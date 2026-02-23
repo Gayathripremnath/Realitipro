@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { FaSearch } from "react-icons/fa";
-import '../Blog.css';
+import './Blog.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -13,7 +13,7 @@ const Blog = () => {
       }, []);
     
   return (
-    <div className='blog-name'>
+    <div className='blog-page'>
         <div className='blog-hero' data-aos="fade-up">
             <h1>Browse our news and article</h1>
             <p> We’ve been representing buyers and sellers in Santa Barbara County for over twenty years and we’re the top-producing independently owned real estate company in the area.

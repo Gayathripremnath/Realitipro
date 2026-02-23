@@ -23,29 +23,43 @@ export default function PropertyPage() {
   const [minPrice,setMinPrice]=useState("");
   const [showPrice, setShowPrice] = useState(false);
   const [maxPrice,setMaxPrice]=useState("");
-  const [beds,setBeds]=useState("");
-  const [baths,setBaths]=useState("");
-  const [layout,setLayout]=useState("split"); // grid | map | split
+  const [minBeds,setMinBeds]=useState("");
+  const [showBeds, setShowBeds] = useState(false);
+  const [maxBeds,setMaxBeds]=useState("");
+  const [minBaths,setMinBaths]=useState("");
+  const [showBaths, setShowBaths] = useState(false);
+  const [maxBaths,setMaxBaths]=useState("");
+  const [layout,setLayout]=useState("split"); 
   const [showFilter,setShowFilter]=useState(false);
 
   const filteredProperties = useMemo(()=>{
     return propertiesData.filter(p=>{
       if(minPrice && p.price < minPrice) return false;
       if(maxPrice && p.price > maxPrice) return false;
-      if(beds && p.beds < beds) return false;
-      if(baths && p.baths < baths) return false;
+      if(minBeds && p.beds < minBeds) return false;
+      if(maxBeds && p.beds > maxBeds) return false;
+      if(minBaths && p.baths < minBaths) return false;
+      if(maxBaths && p.baths > maxBaths) return false;
       return true;
     });
-  },[minPrice,maxPrice,beds,baths]);
+  },[minPrice,maxPrice,minBeds,maxBeds,minBaths,maxBaths]);
 
   const clearFilter=()=>{
-    setMinPrice(""); setMaxPrice(""); setBeds(""); setBaths("");
+    setMinPrice(""); setMaxPrice(""); setMinBeds(""); setMaxBeds(""); setMinBaths(""); setMaxBaths("");
   };
+  const types = [
+  "Business Opportunity",
+  "Commercial Sale",
+  "Apartment",
+  "Condo",
+  "Villa",
+  "Townhouse",
+  "Penthouse"
+];
 
   return (
     <div className="property-page">
 
-      {/* TOP FILTER BAR */}
       <div className="top-bar1">
 
         <input type="text" placeholder="Search by city" />
@@ -55,7 +69,7 @@ export default function PropertyPage() {
   className={`filter-btn ${showPrice ? "active" : ""}`}
   onClick={() => setShowPrice(!showPrice)}
 >
-  <span>$ Price</span>
+  <span> $ Price</span>
   <span className={`arrow ${showPrice ? "rotate" : ""}`}>▾</span>
 </button>
 
@@ -97,19 +111,93 @@ export default function PropertyPage() {
 </div>
 
 
-        <select value={beds} onChange={e=>setBeds(Number(e.target.value))}>
-          <option value="">Bed</option>
-          {[1,2,3,4,5,6].map(n=>
-            <option key={n} value={n}>{n}+</option>
-          )}
-        </select>
+        <div className="filter-item">
+          <button
+            className={`filter-btn ${showBeds ? "active" : ""}`}
+            onClick={() => setShowBeds(!showBeds)}
+          >
+            <span> Beds</span>
+            <span className={`arrow ${showBeds ? "rotate" : ""}`}>▾</span>
+          </button>
 
-        <select value={baths} onChange={e=>setBaths(Number(e.target.value))}>
-          <option value="">Bath</option>
-          {[1,2,3,4,5,6].map(n=>
-            <option key={n} value={n}>{n}+</option>
+          {showBeds && (
+            <div className="beds-dropdown">
+              <div className="price-row">
+                <select
+                  value={minBeds}
+                  onChange={(e) =>
+                    setMinBeds(e.target.value ? Number(e.target.value) : "")
+                  }
+                >
+                  <option value="">No Min</option>
+                  {[1,2,3,4,5,6].map((b) => (
+                    <option key={b} value={b}>
+                      {b}+
+                    </option>
+                  ))}
+                </select>
+
+                <select
+                  value={maxBeds}
+                  onChange={(e) =>
+                    setMaxBeds(e.target.value ? Number(e.target.value) : "")
+                  }
+                >
+                  <option value="">No Max</option>
+                  {[1,2,3,4,5,6].map((b) => (
+                    <option key={b} value={b}>
+                      {b}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
           )}
-        </select>
+        </div>
+
+        <div className="filter-item">
+          <button
+            className={`filter-btn ${showBaths ? "active" : ""}`}
+            onClick={() => setShowBaths(!showBaths)}
+          >
+            <span>Baths</span>
+            <span className={`arrow ${showBaths ? "rotate" : ""}`}>▾</span>
+          </button>
+
+          {showBaths && (
+            <div className="baths-dropdown">
+              <div className="price-row">
+                <select
+                  value={minBaths}
+                  onChange={(e) =>
+                    setMinBaths(e.target.value ? Number(e.target.value) : "")
+                  }
+                >
+                  <option value="">No Min</option>
+                  {[1,2,3,4,5,6].map((b) => (
+                    <option key={b} value={b}>
+                      {b}+
+                    </option>
+                  ))}
+                </select>
+
+                <select
+                  value={maxBaths}
+                  onChange={(e) =>
+                    setMaxBaths(e.target.value ? Number(e.target.value) : "")
+                  }
+                >
+                  <option value="">No Max</option>
+                  {[1,2,3,4,5,6].map((b) => (
+                    <option key={b} value={b}>
+                      {b}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          )}
+        </div>
 
         <button onClick={()=>setShowFilter(!showFilter)} className="filter-btn">
           All Filter
@@ -118,21 +206,231 @@ export default function PropertyPage() {
         <button className="save-btn">Save Search</button>
 
         {/* Layout Icons */}
-        <div className="layout-icons">
-          <button onClick={()=>setLayout("grid")}>⬛</button>
-          <button onClick={()=>setLayout("map")}>🗺</button>
-          <button onClick={()=>setLayout("split")}>▣</button>
-        </div>
+       
       </div>
 
       {/* ADVANCED FILTER PANEL */}
-      {showFilter && (
-        <div className="advanced-filter">
-          <button className="view-btn">View Results</button>
-          <button onClick={clearFilter} className="clear-btn">Clear Filter</button>
-        </div>
-      )}
+   {showFilter && (
+  <div className="filter-overlay">
+    <div className="filter-modal">
 
+      {/* CLOSE BUTTON INSIDE BOX */}
+      <button 
+        className="close-btn"
+        onClick={() => setShowFilter(false)}
+      >
+        ✖
+      </button>
+
+      <div className="filter-header">
+        <button className="view-btn" onClick={()=>setShowFilter(false)}>
+          View Results
+        </button>
+
+        <button onClick={clearFilter} className="clear-btn">
+          Clear Filter
+        </button>
+      </div>
+
+      <div className="filter-grid">
+
+        <div className="filter-group">
+          <h4>Garage</h4>
+          <div className="row">
+            <select>
+              <option>No Min</option>
+              <option>1+</option>
+              <option>2+</option>
+              <option>3+</option>
+            </select>
+
+            <select>
+              <option>No Max</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="filter-group">
+          <h4>Square Footage</h4>
+          <div className="row">
+            <select>
+              <option>No Min</option>
+               <option>750</option>
+              <option>1000</option>
+              <option>1100</option>
+              <option>1200</option>
+              <option>1300</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1700</option>
+              <option>1800</option>
+              <option>1900</option> 
+              <option>2000</option>   
+              <option>2250</option>
+              <option>2500</option>
+              <option>2750</option>
+              <option>3000</option>
+              <option>4000</option>
+              <option>5000</option>
+              <option>7500</option>
+              <option>10000</option>
+            </select>
+
+            <select>
+              <option>No Max</option>
+              <option>750</option>
+              <option>1000</option>
+              <option>1100</option>
+              <option>1200</option>
+              <option>1300</option>
+              <option>1400</option>
+              <option>1500</option>
+              <option>1600</option>
+              <option>1700</option>
+              <option>1800</option>
+              <option>1900</option> 
+              <option>2000</option>   
+              <option>2250</option>
+              <option>2500</option>
+              <option>2750</option>
+              <option>3000</option>
+              <option>4000</option>
+              <option>5000</option>
+              <option>7500</option>
+              <option>10000</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="filter-group">
+          <h4>Lot Size</h4>
+          <div className="row">
+            <select>
+              <option>No Min</option>
+              <option>2000 sq ft</option>
+              <option>4500 sq ft</option>
+              <option>6500 sq ft</option>
+              <option>8000 sq ft</option>
+              <option>9500 sq ft</option>
+              <option>.25 acres</option>
+              <option>.5 acres</option>
+              <option>1 acre</option>
+              <option>2 acres</option>
+              <option>3 acres</option>
+              <option>4 acres</option>
+              <option>5 acres</option>
+              <option>10 acres</option>
+              <option>20 acres</option>
+              <option>40 acres</option>
+              <option>100 acres</option>
+            </select>
+
+            <select>
+              <option>No Max</option>
+                  <option>4500 sq ft</option>
+              <option>6500 sq ft</option>
+              <option>8000 sq ft</option>
+              <option>9500 sq ft</option>
+              <option>.25 acres</option>
+              <option>.5 acres</option>
+              <option>1 acre</option>
+              <option>2 acres</option>
+              <option>3 acres</option>
+              <option>4 acres</option>
+              <option>5 acres</option>
+              <option>10 acres</option>
+              <option>20 acres</option>
+              <option>40 acres</option>
+              <option>100 acres</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="filter-group">
+          <h4>Year Built</h4>
+          <div className="row">
+            <select>
+              <option>No Min</option>
+              <option>2026</option>
+              <option>2025</option>
+              <option>2024</option>
+              <option>2023</option>
+              <option>2022</option>
+              <option>2021</option>
+              <option>2020</option>
+              <option>2019</option>
+              <option>2018</option>
+              <option>2017</option>
+              <option>2016</option> 
+              <option>2015</option>
+              <option>2010</option>
+              <option>2005</option>
+              <option>2000</option>
+              <option>1990</option>
+              <option>1980</option>
+              <option>1970</option>
+              <option>1960</option>
+              <option>1950</option>
+              <option>1940</option>
+              <option>1920</option>
+              <option>1900</option>
+            </select>
+
+            <select>
+              <option>No Max</option>
+                 <option>2026</option>
+              <option>2025</option>
+              <option>2024</option>
+              <option>2023</option>
+              <option>2022</option>
+              <option>2021</option>
+              <option>2020</option>
+              <option>2019</option>
+              <option>2018</option>
+              <option>2017</option>
+              <option>2016</option> 
+              <option>2015</option>
+              <option>2010</option>
+              <option>2005</option>
+              <option>2000</option>
+              <option>1990</option>
+              <option>1980</option>
+              <option>1970</option>
+              <option>1960</option>
+              <option>1950</option>
+              <option>1940</option>
+              <option>1920</option>
+              <option>1900</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+  <div className="filter-section">
+  <h3>Property Type</h3>
+
+  <div className="property-types">
+    {types.map((type, index) => (
+      <label key={index} className="checkbox-box">
+        <input type="checkbox" />
+        <span>{type}</span>
+      </label>
+    ))}
+  </div>
+</div>
+    </div>
+  </div>
+)}
+
+ <div className="layout-icons">
+         <div> <button onClick={()=>setLayout("grid")}>⬛</button></div>
+       <div><button onClick={()=>setLayout("map")}>🗺</button></div>   
+          <div><button onClick={()=>setLayout("split")}>▣</button></div>
+        </div>
       {/* CONTENT AREA */}
       <div className={`content ${layout}`}>
 

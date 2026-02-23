@@ -809,6 +809,26 @@ body {
   .worth-header h2 {
     font-size: 48px !important;
   }
+
+  .search-box {
+    max-width: 550px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .section-heading {
+    font-size: 32px;
+  }
+
+  .neighborhood-title {
+    font-size: 36px;
+  }
+
+  .homeworth-image img {
+    width: 400px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -834,11 +854,63 @@ body {
     width: 100%;
     max-width: 400px;
   }
+
+  .hero {
+    height: 80vh;
+  }
+
+  .property-section {
+    padding: 80px 5%;
+  }
+
+  .neighborhood-section {
+    padding: 80px 5%;
+  }
+
+  .homeworth-section {
+    padding: 0 5% 80px 5%;
+  }
+
+  .home-news-section {
+    padding: 80px 5%;
+  }
+
+  .newsletter-section {
+    padding: 80px 5%;
+  }
+
+  .search-box {
+    max-width: 500px;
+  }
+
+  .arrow-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .neighborhood-card {
+    height: 400px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-row input {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 40px;
+  }
+
+  .hero-content p {
+    font-size: 12px;
+    margin-bottom: 30px;
   }
 
   .property-grid,
@@ -857,10 +929,16 @@ body {
     max-width: 400px;
   }
 
+  .newsletter-btn {
+    width: 100%;
+    max-width: 400px;
+  }
+
   .worth-header {
     flex-direction: column;
     gap: 30px;
     text-align: center;
+    padding: 60px 5%;
   }
 
   .header-left h2 {
@@ -873,19 +951,181 @@ body {
     margin-top: 20px;
   }
 
+  .header-right p {
+    font-size: 14px;
+  }
+
   .property-header {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
   }
 
   .modal-box {
     width: 90%;
     padding: 30px;
+    max-width: 400px;
+  }
+
+  .modal-box h3 {
+    font-size: 24px;
   }
 
   .homeworth-content h2 {
     font-size: 40px;
+  }
+
+  .homeworth-content h4 {
+    font-size: 14px;
+  }
+
+  .homeworth-content p {
+    font-size: 13px;
+    max-width: 100%;
+  }
+
+  .property-card img {
+    height: 250px;
+  }
+
+  .neighborhood-card {
+    height: 300px;
+  }
+
+  .neighborhood-overlay {
+    padding: 30px 20px;
+  }
+
+  .neighborhood-overlay h3 {
+    font-size: 18px;
+  }
+
+  .neighborhood-overlay p {
+    font-size: 12px;
+  }
+
+  .search-box {
+    flex-direction: column;
+    max-width: 100%;
+    border-radius: 15px;
+    padding: 5px;
+  }
+
+  .search-box input {
+    padding: 12px 15px;
+    width: 100%;
+  }
+
+  .search-box button {
+    padding: 12px 25px;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .news-card {
+    border: none;
+  }
+
+  .news-image {
+    height: 200px;
+  }
+
+  .news-date {
+    margin: 15px 20px 8px 20px;
+    font-size: 12px;
+  }
+
+  .news-title {
+    margin: 0 20px 20px 20px;
+    font-size: 14px;
+  }
+
+  .read-more-btn {
+    margin: 0 20px 20px 20px;
+    font-size: 11px;
+  }
+
+  .see-all-btn {
+    padding: 14px 35px;
+    font-size: 13px;
+  }
+
+  .inquiry-btn {
+    padding: 12px 30px;
+    font-size: 12px;
+  }
+
+  .intro-btn {
+    padding: 10px 24px;
+    font-size: 11px;
+  }
+
+  .arrow-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .section-heading {
+    font-size: 28px;
+  }
+
+  .neighborhood-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .property-section {
+    padding: 60px 5%;
+  }
+
+  .neighborhood-section {
+    padding: 60px 5%;
+  }
+
+  .homeworth-section {
+    padding: 0 5% 60px 5%;
+  }
+
+  .home-news-section {
+    padding: 60px 5%;
+  }
+
+  .newsletter-section {
+    padding: 60px 5%;
+  }
+
+  .up-arrow {
+    padding-bottom: 40px;
+    margin-top: 20px;
+  }
+
+  .property-details {
+    gap: 15px;
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+
+  .address {
+    font-size: 14px;
+  }
+
+  .listed {
+    font-size: 11px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-row input {
+    width: 100%;
   }
 }
 

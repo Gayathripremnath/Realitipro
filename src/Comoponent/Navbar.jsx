@@ -44,11 +44,12 @@ const Navbar = () => {
           </button>
 
           <button 
-            className="menu-btn"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            ☰
-          </button>
+  className="menu-btn"
+  onClick={() => setMobileOpen(!mobileOpen)}
+>
+  {mobileOpen ? "✕" : "☰"}
+</button>
+          
         </div>
       </nav>
 
@@ -93,22 +94,22 @@ const Navbar = () => {
           placeholder="Enter your password"
         />
 
-        <span
-          className="eye-icon"
-          onClick={() => setShowPassword(!showPassword)}
-        >
-          {showPassword ? "👁" : "🙈"}
-        </span>
+       <span
+  className="eye-icon"
+  onClick={() => setShowPassword(!showPassword)}
+>
+  {showPassword ? <FaEye /> : <FaEyeSlash />}
+</span>
       </div>
 
       <div className="login-options">
         <label>
-          <input type="checkbox" /> Remember me
+          <input type="checkbox" />Remember me
         </label>
         <span className="forgot">Forgot password?</span>
       </div>
 
-      <button className="submit-btn">
+      <button className="submit-btn"> 
         Sign In
       </button>
 
